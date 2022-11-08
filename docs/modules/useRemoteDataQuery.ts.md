@@ -1,6 +1,6 @@
 ---
 title: useRemoteDataQuery.ts
-nav_order: 2
+nav_order: 3
 parent: Modules
 ---
 
@@ -24,7 +24,7 @@ Added in v1.0.0
 **Signature**
 
 ```ts
-export default function useRemoteDataQuery<E, A>(options: Options<E, A>)
+export default function useRemoteDataQuery<E, A, U>(options: Options<E, A, U>)
 ```
 
 Added in v1.0.0
