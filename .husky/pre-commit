@@ -4,3 +4,4 @@
 npm test
 npm run tsc
 npm run docs
+git add -A .
