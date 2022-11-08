@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/jderochervlk/remote-data-query/compare/v1.0.2...v1.1.0) (2022-11-08)
+
+
+### Features
+
+* improve type definitions for useRemoteDataQuery ([a3f310a](https://github.com/jderochervlk/remote-data-query/commit/a3f310ac4770b42037084365fad29f2c33e3d5a5))
+
 ## [1.0.2](https://github.com/jderochervlk/remote-data-query/compare/v1.0.1...v1.0.2) (2022-11-08)
 
 
