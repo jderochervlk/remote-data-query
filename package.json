@@ -4,7 +4,7 @@
   "description": "An fp-ts library make it easy to work with @tanstack/react-query.",
   "source": "src/index.ts",
   "main": "dist/index.js",
-  "module": "dist/module.mjs",
+  "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --sourcemap --format esm,cjs --dts",
