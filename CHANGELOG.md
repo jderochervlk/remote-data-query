@@ -1,3 +1,11 @@
+## [1.0.2](https://github.com/jderochervlk/remote-data-query/compare/v1.0.1...v1.0.2) (2022-11-08)
+
+
+### Bug Fixes
+
+* set module to correct filename ([b14b64c](https://github.com/jderochervlk/remote-data-query/commit/b14b64cc679030880b5ca574c1d761c0a26d014c))
+* set types to correct filename ([52561a5](https://github.com/jderochervlk/remote-data-query/commit/52561a564b5db4f2b3c7075c03c9bc976501c656))
+
 ## [1.0.1](https://github.com/jderochervlk/remote-data-query/compare/v1.0.0...v1.0.1) (2022-11-08)
 
 
