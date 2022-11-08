@@ -1,9 +1,5 @@
 # @jvlk/remote-data-query
 
-Fetch wrappers for `fp-ts`.
-
-# @jvlk/remote-data-query
-
 Work with responses from [`@tanstack/react-query`](https://tanstack.com/) using [`@jvlk/fp-ts-remote-data`](https://jderochervlk.github.io/fp-ts-remote-data/) and [`fp-ts`](https://gcanti.github.io/fp-ts/).
 
 ## Installing
