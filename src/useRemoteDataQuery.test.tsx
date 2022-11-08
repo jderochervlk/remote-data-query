@@ -13,6 +13,7 @@ import * as TE from 'fp-ts/TaskEither'
 import React, { ReactNode } from 'react'
 import fetchUserName from './mocks/fetchUserName'
 import useRemoteDataQuery from './useRemoteDataQuery'
+import * as t from 'io-ts'
 
 const queryClient = new QueryClient()
 
@@ -67,4 +68,40 @@ test('loads and then returns failure', async () => {
   expect(result.current).toEqual(
     RD.failure(expect.objectContaining({ ok: false, status: 500 }))
   )
+})
+
+test('io-ts decoder returns success', async () => {
+  const { result, waitFor } = renderHook(
+    () =>
+      useRemoteDataQuery({
+        queryFn: fetchUserName('1'),
+        queryKey: ['test-4'],
+        decoder: t.string,
+      }),
+    { wrapper }
+  )
+
+  expect(result.current).toEqual(RD.loading)
+
+  await waitFor(() => result.current._tag === 'Success')
+
+  expect(result.current).toEqual(RD.success('Bilbo Baggins'))
+})
+
+test('io-ts decoder returns failure', async () => {
+  const { result, waitFor } = renderHook(
+    () =>
+      useRemoteDataQuery({
+        queryFn: fetchUserName('1'),
+        queryKey: ['test-5'],
+        decoder: t.number,
+      }),
+    { wrapper }
+  )
+
+  expect(result.current).toEqual(RD.loading)
+
+  await waitFor(() => result.current._tag === 'Failure')
+
+  expect(result.current).toEqual(RD.failure(expect.any(Array)))
 })

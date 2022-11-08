@@ -28,8 +28,9 @@ You'll need an API call that returns a `TaskEither<E, Option<A>>`. You can use [
 > Note: Your application must be wrapped with a [`QueryClientProvider`](https://tanstack.com/query/v4/docs/reference/QueryClientProvider).
 
 ```tsx
-import * as TE from 'fp-ts/lib/TaskEither'
 import * as O from 'fp-ts/lib/Option'
+import * as TE from 'fp-ts/lib/TaskEither'
+import * as t from 'io-ts'
 import { fold, useRemoteDataQuery } from '@jvlk/remote-data-query'
 import { safeFetchJSon } from '@jvlk/fp-ts-fetch'
 
@@ -44,6 +45,7 @@ function User(props: { userId: string }) {
   const userData = useRemoteDataQuery({
     queryFn: fetchUserName(userId),
     queryKey: [userId],
+    decoder: t.string // this is optional, but recommended
   })
 
   return fold(
@@ -55,3 +57,6 @@ function User(props: { userId: string }) {
   )
 }
 ```
+
+## Using with `fp-ts`
+You can pass a `decoder` from [`io-ts`](https://gcanti.github.io/io-ts/) to parse the data that is returned from the API request. This is optional, but I highly encourage you to do this! Any errors returned from `io-ts` will return a `Failure<t.Errors>`, and instead of the hook returning a `Success<unknown>` you will get the type of the `decoder` you use. The above example returns `Success<string>`.
