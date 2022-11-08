@@ -22,6 +22,7 @@ yarn add @jvlk/remote-data-query typescript fp-ts
 ```
 
 ## Example
+[codesandbox](https://codesandbox.io/s/jvlk-remote-data-query-example-nrz5e4?file=/src/index.tsx)
 
 You'll need an API call that returns a `TaskEither<E, Option<A>>`. You can use [`safeFetchJson`](https://jderochervlk.github.io/fp-ts-fetch/modules/safeFetchJson.ts.html) from `@jvlk/fp-ts-fetch` and then parse the results using `O.fromNullable`.
 
