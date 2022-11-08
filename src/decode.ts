@@ -1,5 +1,5 @@
 /**
- * @since 1.1.0
+ * @since 1.0.0
  */
 import * as t from 'io-ts'
 import * as O from 'fp-ts/lib/Option'
@@ -7,7 +7,7 @@ import * as E from 'fp-ts/lib/Either'
 import { pipe } from 'fp-ts/lib/function'
 
 /**
- * @since 1.1.0
+ * @since 1.0.0
  */
 export default function decode<T, U>(decoder?: t.Decoder<T, U> | undefined) {
   return function <E>(

@@ -6,7 +6,7 @@ parent: Modules
 
 ## decode overview
 
-Added in v1.1.0
+Added in v1.0.0
 
 ---
 
@@ -27,4 +27,4 @@ Added in v1.1.0
 export default function decode<T, U>(decoder?: t.Decoder<T, U> | undefined)
 ```
 
-Added in v1.1.0
+Added in v1.0.0
