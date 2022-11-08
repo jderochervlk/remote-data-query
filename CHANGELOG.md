@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/jderochervlk/remote-data-query/compare/v1.0.0...v1.0.1) (2022-11-08)
+
+
+### Bug Fixes
+
+* remove lib from fp-ts imports ([00103c9](https://github.com/jderochervlk/remote-data-query/commit/00103c91feed0eea9b1c3dc7601d070fdeca7efc))
+
 # 1.0.0 (2022-11-08)
 
 
