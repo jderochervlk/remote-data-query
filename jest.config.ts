@@ -7,7 +7,7 @@ export default {
     "./src/**/*",
     "!./src/mocks/*",
     "!./src/index.ts",
-    "!./src/example/index.ts"
+    "!./src/example/index.tsx"
   ],
   testEnvironment: 'jsdom',
   transform: {
