@@ -23,8 +23,8 @@ You'll need an API call that returns a `TaskEither<E, Option<A>>`. You can use [
 > Note: Your application must be wrapped with a [`QueryClientProvider`](https://tanstack.com/query/v4/docs/reference/QueryClientProvider).
 
 ```tsx
-import * as O from 'fp-ts/lib/Option'
-import * as TE from 'fp-ts/lib/TaskEither'
+import * as O from 'fp-ts/Option'
+import * as TE from 'fp-ts/TaskEither'
 import * as t from 'io-ts'
 import { fold, useRemoteDataQuery } from '@jvlk/remote-data-query'
 import { safeFetchJSon } from '@jvlk/fp-ts-fetch'
