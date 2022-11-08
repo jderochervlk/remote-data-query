@@ -24,7 +24,10 @@ Added in v1.0.0
 **Signature**
 
 ```ts
-export default function useRemoteDataQuery<E, A, U>(options: Options<E, A, U>)
+export default function useRemoteDataQuery<E, A, U>(
+  options: OptionsWithDecoder<E, A, U>
+): RD.RemoteData<E | t.Errors, U>
+export default function useRemoteDataQuery<E, A, U>(options: OptionsWithoutDecoder<E, A, U>): RD.RemoteData<E, A>
 ```
 
 Added in v1.0.0

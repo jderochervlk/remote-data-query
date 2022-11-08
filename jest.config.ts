@@ -6,7 +6,8 @@ export default {
   collectCoverageFrom: [
     "./src/**/*",
     "!./src/mocks/*",
-    "!./src/index.ts"
+    "!./src/index.ts",
+    "!./src/example/index.ts"
   ],
   testEnvironment: 'jsdom',
   transform: {

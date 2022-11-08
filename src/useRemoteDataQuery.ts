@@ -11,6 +11,17 @@ import * as TE from 'fp-ts/TaskEither'
 import * as t from 'io-ts'
 import decode from './decode'
 
+type OptionsWithDecoder<E, A, U> = {
+  queryKey: string[]
+  queryFn: TE.TaskEither<E, O.Option<A>>
+  decoder: t.Decoder<A, U>
+}
+
+type OptionsWithoutDecoder<E, A, U> = {
+  queryKey: string[]
+  queryFn: TE.TaskEither<E, O.Option<A>>
+}
+
 type Options<E, A, U> = {
   queryKey: string[]
   queryFn: TE.TaskEither<E, O.Option<A>>
@@ -20,6 +31,12 @@ type Options<E, A, U> = {
 /**
  * @since 1.0.0
  */
+export default function useRemoteDataQuery<E, A, U>(
+  options: OptionsWithDecoder<E, A, U>
+): RD.RemoteData<E | t.Errors, U>
+export default function useRemoteDataQuery<E, A, U>(
+  options: OptionsWithoutDecoder<E, A, U>
+): RD.RemoteData<E, A>
 export default function useRemoteDataQuery<E, A, U>(options: Options<E, A, U>) {
   const { isLoading, data } = useQuery(options)
 

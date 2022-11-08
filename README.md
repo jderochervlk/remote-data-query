@@ -27,31 +27,40 @@ import * as O from 'fp-ts/Option'
 import * as TE from 'fp-ts/TaskEither'
 import * as t from 'io-ts'
 import { fold, useRemoteDataQuery } from '@jvlk/remote-data-query'
-import { safeFetchJSon } from '@jvlk/fp-ts-fetch'
+import { safeFetchJson } from '@jvlk/fp-ts-fetch'
+import { flow, pipe } from 'fp-ts/function'
+import React from 'react'
 
-function fetchUserName(id: string) {
+function fetchRandomStrings() {
   return pipe(
-    safeFetchJson(`www.api.com/user/${id}`),
-    map(flow(O.fromNullable, O.chain(R.lookup('name'))))
+    safeFetchJson(`https://baconipsum.com/api/?type=meat-and-filler`),
+    TE.map(flow(O.fromNullable))
   )
 }
 
-function User(props: { userId: string }) {
-  const userData = useRemoteDataQuery({
-    queryFn: fetchUserName(userId),
-    queryKey: [userId],
-    decoder: t.string // this is optional, but recommended
+export default function App() {
+  const randomData = useRemoteDataQuery({
+    queryFn: fetchRandomStrings(),
+    queryKey: ['random-string'],
+    decoder: t.array(t.string), // this is optional, but recommended
   })
 
   return fold(
-    userData,
+    randomData,
     () => <p>loading...</p>,
     (e) => <p>There was an error: {JSON.stringify(e)}</p>,
-    () => <p>No user found.</p>,
-    (name) => <p>Hello {name}!</p>
+    () => <p>No text found.</p>,
+    (text) => (
+      <>
+        {text.map((line, i) => (
+          <p key={`${line.slice(0, 5)}-${i}`}>{line}</p>
+        ))}
+      </>
+    )
   )
 }
 ```
 
 ## Using with `fp-ts`
+
 You can pass a `decoder` from [`io-ts`](https://gcanti.github.io/io-ts/) to parse the data that is returned from the API request. This is optional, but I highly encourage you to do this! Any errors returned from `io-ts` will return a `Failure<t.Errors>`, and instead of the hook returning a `Success<unknown>` you will get the type of the `decoder` you use. The above example returns `Success<string>`.
