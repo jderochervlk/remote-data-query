@@ -5,7 +5,7 @@
   "source": "src/index.ts",
   "main": "dist/index.js",
   "module": "dist/module.mjs",
-  "types": "dist/types.d.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsup src/index.ts --sourcemap --format esm,cjs --dts",
     "docs": "docs-ts",
