@@ -6,7 +6,7 @@ import {
   useQuery,
 } from '@tanstack/react-query'
 import { renderHook } from '@testing-library/react-hooks'
-import { flow, pipe } from 'fp-ts/lib/function'
+import { flow, pipe } from 'fp-ts/function'
 import * as O from 'fp-ts/Option'
 import * as R from 'fp-ts/Record'
 import * as TE from 'fp-ts/TaskEither'

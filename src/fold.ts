@@ -2,7 +2,7 @@
  * @since 1.0.0
  */
 import * as RD from '@jvlk/fp-ts-remote-data'
-import { pipe } from 'fp-ts/lib/function'
+import { pipe } from 'fp-ts/function'
 
 /**
  * @since 1.0.0
