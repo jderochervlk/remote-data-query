@@ -1,0 +1,77 @@
+{
+  "name": "@jvlk/remote-data-query",
+  "version": "1.0.0",
+  "description": "An fp-ts library make it easy to work with @tanstack/react-query.",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "scripts": {
+    "build": "parcel build",
+    "docs": "docs-ts",
+    "format": "prettier -w src",
+    "prepare": "husky install",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "tsc": "tsc",
+    "semantic-release": "semantic-release"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jderochervlk/remote-data-query.git"
+  },
+  "keywords": [
+    "fp-ts",
+    "fetch",
+    "functional programming",
+    "typescript",
+    "fp"
+  ],
+  "author": "Josh Vlk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jderochervlk/remote-data-query/issues"
+  },
+  "homepage": "https://github.com/jderochervlk/remote-data-query#readme",
+  "dependencies": {
+    "@jvlk/fp-ts-fetch": "^1.1.0",
+    "@jvlk/fp-ts-remote-data": "^1.0.0",
+    "@tanstack/react-query": "^4.14.5",
+    "fp-ts": "^2.13.1",
+    "typescript": "^4.8.4"
+  },
+  "devDependencies": {
+    "@parcel/packager-ts": "^2.7.0",
+    "@parcel/transformer-typescript-types": "^2.7.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^9.0.1",
+    "@semantic-release/release-notes-generator": "^10.0.3",
+    "@swc/core": "^1.3.14",
+    "@swc/jest": "^0.2.23",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/jest": "^29.2.1",
+    "@types/react": "^16.14.34",
+    "docs-ts": "^0.7.0",
+    "husky": "^8.0.0",
+    "io-ts": "^2.2.19",
+    "jest": "^29.2.2",
+    "jest-environment-jsdom": "^29.2.2",
+    "msw": "^0.47.4",
+    "parcel": "^2.7.0",
+    "prettier": "^2.7.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-test-renderer": "^16.14.0",
+    "semantic-release": "^19.0.5",
+    "ts-pattern": "^4.0.5",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "peerDependencies": {
+    "@tanstack/react-query": "^4.14.5",
+    "fp-ts": "^2.13.1",
+    "typescript": "^4.8.4"
+  }
+}
