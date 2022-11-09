@@ -13,4 +13,14 @@ export const handlers = [
       .with('3', () => res(ctx.status(500)))
       .otherwise(() => res(ctx.status(204), ctx.json({})))
   }),
+  rest.post('www.api.com/user', async (req, res, ctx) => {
+    const body = await req.json()
+    const { name, id } = body
+
+    return match(id)
+      .with('1', () => res(ctx.status(200), ctx.json({ name })))
+      .with('2', () => res(ctx.status(204), ctx.json({})))
+      .with('3', () => res(ctx.status(500)))
+      .otherwise(() => res(ctx.status(204), ctx.json({})))
+  }),
 ]
