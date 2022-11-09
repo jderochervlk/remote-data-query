@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/jderochervlk/remote-data-query/compare/v1.1.0...v1.2.0) (2022-11-09)
+
+
+### Features
+
+* add useRemoteDataMutate hook ([b5dba8d](https://github.com/jderochervlk/remote-data-query/commit/b5dba8d186e4f54ac3bf3240e64b62b1f82f5e8f))
+
 # [1.1.0](https://github.com/jderochervlk/remote-data-query/compare/v1.0.2...v1.1.0) (2022-11-08)
 
 
