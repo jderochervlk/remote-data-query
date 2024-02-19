@@ -63,7 +63,7 @@
     "react-dom": "^16.14.0",
     "react-test-renderer": "^16.14.0",
     "semantic-release": "^19.0.5",
-    "ts-pattern": "^4.0.5",
+    "ts-pattern": "^5.0.8",
     "tsup": "^6.4.0",
     "whatwg-fetch": "^3.6.2"
   },
